@@ -2,7 +2,7 @@
 //import { createTour } from '../../../lib/db/tournaments';
 import { createTour } from '../../../lib/db/controllers/tourController';
 
-export let createTourObject = {
+let createTourObject = {
 	name: '',
 	edition: '',
 	location: ''
