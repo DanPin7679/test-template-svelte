@@ -14,9 +14,15 @@
 	</div>
 	<div class="flex flex-col gap-4">
 		{#each toursData as tour}
-			<div class="border-b   border-blue-border py-4 px-8">
+			<div class="flex felx-row justify-between border-b border-blue-border py-4 px-8 text-xl">
 				<a href={`/tournaments/${tour._id}`}>{tour.name}</a>
+				<a href={`/tournaments/${tour._id}/create`} class="text-orange text-base">new edition</a>
 			</div>
+			{#each tour.editions as edition, idx}
+				<div class="flex felx-row justify-between px-12">
+					<a href={`/tournaments/${tour._id}-${idx}`}>{edition.name}</a>
+				</div>
+			{/each}
 		{/each}
 	</div>
 </div>

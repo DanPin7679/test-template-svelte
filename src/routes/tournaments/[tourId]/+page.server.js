@@ -2,8 +2,11 @@
 import { getTour } from '../../../lib/db/controllers/tourController';
 
 export const load = async function ({ params }) {
-	const data = await getTour(params.tourId);
+	const tourId = params.tourId.split('-')[0];
+	const edId = params.tourId.split('-')[1];
+	const data = await getTour(tourId);
 	return {
-		tour: data
+		tour: data,
+		edition: edId
 	};
 };
